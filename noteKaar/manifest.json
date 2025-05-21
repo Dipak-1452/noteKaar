@@ -1,0 +1,23 @@
+{
+    "manifest_version": 2,
+    "name": "noteKaar",
+    "version": "1.0",
+    "description": "Press C + N to create a sticky note or Right click in any websites",
+    "permissions": ["activeTab", "storage","contextMenus"],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ],
+    "commands": {
+      "create_note": {
+        "description": "Create a new sticky note"
+      }
+    }
+  }
+  
